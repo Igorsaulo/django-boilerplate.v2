@@ -20,7 +20,6 @@ class CustomTokenObtainPairSerializer(TokenObtainPairView):
     def post(self, request, *args, **kwargs):
         email = request.data.get("email")
         password = request.data.get("password")
-        print(email, password)
         user = authenticate(email=email, password=password)
         if user:
             return super().post(request, *args, **kwargs)
